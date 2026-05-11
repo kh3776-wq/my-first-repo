@@ -19,4 +19,12 @@ function divide(a, b) {
   return a / b;
 }
 
-module.exports = { add, subtract, multiply, divide };
+// 거듭제곱 함수 추가
+function power(base, exponent) {
+  if (exponent < 0) {
+    throw new Error('지수는 0 이상이어야 합니다');
+  }
+  return Math.pow(base, exponent);
+}
+
+module.exports = { add, subtract, multiply, divide, power };

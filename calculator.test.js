@@ -1,6 +1,6 @@
 // calculator.js 기본 테스트
 
-const { add, subtract, multiply, divide } = require('./calculator');
+const { add, subtract, multiply, divide, power } = require('./calculator');
 
 let passed = 0;
 let failed = 0;
@@ -49,5 +49,10 @@ test('0으로 나누면 에러 발생', () => {
     expect(e.message).toBe('0으로 나눌 수 없습니다');
   }
 });
+
+console.log('\n[거듭제곱 테스트]');
+test('2 ^ 3 = 8', () => expect(power(2, 3)).toBe(8));
+test('5 ^ 0 = 1', () => expect(power(5, 0)).toBe(1));
+test('3 ^ 2 = 9', () => expect(power(3, 2)).toBe(9));
 
 console.log(`\n결과: ${passed}개 통과, ${failed}개 실패\n`);
